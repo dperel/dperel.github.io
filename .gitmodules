@@ -1,0 +1,3 @@
+[submodule "sofreshandsogreen"]
+	path = sofreshandsogreen
+	url = git@github.com:johnkeith/sofreshandsogreen.git
