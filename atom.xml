@@ -4,7 +4,7 @@
   <title><![CDATA[David Perel's Octopress Blog]]></title>
   <link href="http://dperel.github.io/atom.xml" rel="self"/>
   <link href="http://dperel.github.io/"/>
-  <updated>2015-06-24T23:23:55-04:00</updated>
+  <updated>2015-06-24T23:25:52-04:00</updated>
   <id>http://dperel.github.io/</id>
   <author>
     <name><![CDATA[David Perel]]></name>
@@ -26,24 +26,19 @@
 
 <p>In ERB, Ruby programmers become aware of the importance of binding. In order to use this powerful templating tool to generate HTML (or other language) documents using Ruby, a binding is required to pass a snapshot of the current code and pass it to be executed. Let&rsquo;s use this code snippet where we assume there is a Movie class with an array of information-laden movie objects made accessible by calling Movie.all:</p>
 
-<p>def generate_movie_webpages
-+    html = File.read(&ldquo;lib/templates/movie.html.erb&rdquo;)
-+    template = ERB.new(html)</p>
+<blockquote><p>def generate_movie_webpages
+ html = File.read(&ldquo;lib/templates/movie.html.erb&rdquo;)
+  template = ERB.new(html)
+&ndash;From our movie.html.erb file we generate a new ERB template</p>
 
-<h1>From our movie.html.erb file we generate a new ERB template</h1>
-
-<ul>
-<li> @movies = Movie.all</li>
-<li> @movies.each do |movie|</li>
-<li>   @movie = movie</li>
-<li>   result = template.result(binding)</li>
-<li>   File.write(&ldquo;_site/movies/#{movie.name}&rdquo;, result)
-
-<h1>For each movie object in our list, we generate a page based on the template and store it at a unique address.</h1></li>
-<li> end</li>
-<li>end</li>
-</ul>
-
+<p>   @movies = Movie.all
+   @movies.each do |movie|
+     @movie = movie
+     result = template.result(binding)
+     File.write(&ldquo;_site/movies/#{movie.name}&rdquo;, result)
+&ndash;For each movie object in our list, we generate a page based on the template and store it at a unique address.
+   end
+ end</p></blockquote>
 
 <p>Notice where binding came in there? It was in the loop, taking a snapshot of the code as it stood and passing it to the ERB execution method, template#result(). We&rsquo;ve seen some of what it can do. Now, what exactly does binding contain, and where does it come from?</p>
 
