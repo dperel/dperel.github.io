@@ -4,7 +4,7 @@
   <title><![CDATA[David Perel's Octopress Blog]]></title>
   <link href="http://dperel.github.io/atom.xml" rel="self"/>
   <link href="http://dperel.github.io/"/>
-  <updated>2015-06-25T00:15:23-04:00</updated>
+  <updated>2015-06-25T00:17:16-04:00</updated>
   <id>http://dperel.github.io/</id>
   <author>
     <name><![CDATA[David Perel]]></name>
@@ -68,7 +68,7 @@
 <p><em>&ldquo;It squishes the universe into one singular object that I can then pass around.&rdquo;</em> - Avi Flombaum, Rubyista Extraordinaire</p>
 
 <p><em>&ldquo;Logic of a quantifier to be applied to a given variable so that the variable falls within its scope.
-For example, in an expression of the form. Example: For every x, if x is a dog, x is an animal,’ the universal quantifier is binding the variable x.&rdquo; </em> - Oxford English Dictionary</p>
+For example, in an expression of the form: For every x, if x is a dog, x is an animal, the universal quantifier is binding the variable x.&rdquo; </em> - Oxford English Dictionary</p>
 
 <p>This is a good start. It seems that binding grabs the universe of code as it is at that line of processing, packs it in a pill, and allows your template to ingest it for execution. <strong>But where exactly does binding come from? What kind of method or object is it? </strong>To help us out, I&rsquo;ve reached into the Ruby Documentation.</p>
 
