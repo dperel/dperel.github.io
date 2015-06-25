@@ -92,19 +92,34 @@
 
 <p>In ERB, Ruby programmers become aware of the importance of binding. In order to use this powerful templating tool to generate HTML (or other language) documents using Ruby, a binding is required to pass a snapshot of the current code and pass it to be executed. Let&rsquo;s use this code snippet where we assume there is a Movie class with an array of information-laden movie objects made accessible by calling Movie.all:</p>
 
-<blockquote><p>def generate_movie_webpages
- html = File.read(&ldquo;lib/templates/movie.html.erb&rdquo;)
-  template = ERB.new(html)
-&ndash;From our movie.html.erb file we generate a new ERB template</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="k">def</span> <span class="nf">generate_movie_webpages</span>
+</span><span class='line'>  <span class="n">html</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;lib/templates/movie.html.erb&quot;</span><span class="p">)</span>
+</span><span class='line'>   <span class="n">template</span> <span class="o">=</span> <span class="no">ERB</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</span><span class='line'><span class="o">--</span><span class="no">From</span> <span class="n">our</span> <span class="n">movie</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">erb</span> <span class="n">file</span> <span class="n">we</span> <span class="n">generate</span> <span class="n">a</span> <span class="kp">new</span> <span class="no">ERB</span> <span class="n">template</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="vi">@movies</span> <span class="o">=</span> <span class="no">Movie</span><span class="o">.</span><span class="n">all</span>
+</span><span class='line'>    <span class="vi">@movies</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">movie</span><span class="o">|</span>
+</span><span class='line'>      <span class="vi">@movie</span> <span class="o">=</span> <span class="n">movie</span>
+</span><span class='line'>      <span class="n">result</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="nb">binding</span><span class="p">)</span>
+</span><span class='line'>      <span class="no">File</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;_site/movies/</span><span class="si">#{</span><span class="n">movie</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</span><span class='line'><span class="o">--</span><span class="no">For</span> <span class="n">each</span> <span class="n">movie</span> <span class="n">object</span> <span class="k">in</span> <span class="n">our</span> <span class="n">list</span><span class="p">,</span> <span class="n">we</span> <span class="n">generate</span> <span class="n">a</span> <span class="n">page</span> <span class="n">based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">template</span> <span class="ow">and</span> <span class="n">store</span> <span class="n">it</span> <span class="n">at</span> <span class="n">a</span> <span class="n">unique</span> <span class="n">address</span><span class="o">.</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
-<p>   @movies = Movie.all
-   @movies.each do |movie|
-     @movie = movie
-     result = template.result(binding)
-     File.write(&ldquo;_site/movies/#{movie.name}&rdquo;, result)
-&ndash;For each movie object in our list, we generate a page based on the template and store it at a unique address.
-   end
- end</p></blockquote>
 
 <p>Notice where binding came in there? It was in the loop, taking a snapshot of the code as it stood and passing it to the ERB execution method, template#result(). We&rsquo;ve seen some of what it can do. Now, what exactly does binding contain, and where does it come from?</p>
 
