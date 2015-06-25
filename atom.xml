@@ -4,7 +4,7 @@
   <title><![CDATA[David Perel's Octopress Blog]]></title>
   <link href="http://dperel.github.io/atom.xml" rel="self"/>
   <link href="http://dperel.github.io/"/>
-  <updated>2015-06-25T00:11:18-04:00</updated>
+  <updated>2015-06-25T00:12:15-04:00</updated>
   <id>http://dperel.github.io/</id>
   <author>
     <name><![CDATA[David Perel]]></name>
@@ -18,9 +18,9 @@
     <link href="http://dperel.github.io/blog/2015/06/24/bindings-in-ruby/"/>
     <updated>2015-06-24T22:13:35-04:00</updated>
     <id>http://dperel.github.io/blog/2015/06/24/bindings-in-ruby</id>
-    <content type="html"><![CDATA[<p><img class="center" src="http://www.artinthepicture.com/artists/Jan_van_Eyck/arnolfini.jpeg"></p>
+    <content type="html"><![CDATA[<p><strong>Do you see the binding? </strong></p>
 
-<p><strong>Do you see the binding? </strong></p>
+<p><img class="center" src="http://www.artinthepicture.com/artists/Jan_van_Eyck/arnolfini.jpeg"></p>
 
 <h3> What is a binding? </h3>
 
