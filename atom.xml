@@ -4,7 +4,7 @@
   <title><![CDATA[David Perel's Octopress Blog]]></title>
   <link href="http://dperel.github.io/atom.xml" rel="self"/>
   <link href="http://dperel.github.io/"/>
-  <updated>2015-06-24T23:45:35-04:00</updated>
+  <updated>2015-06-24T23:51:37-04:00</updated>
   <id>http://dperel.github.io/</id>
   <author>
     <name><![CDATA[David Perel]]></name>
@@ -75,7 +75,7 @@ For example, in an expression of the form. Example: For every x, if x is a dog, 
 <p><strong> Do you see the binding now? </strong></p>
 
 <p><em>
-Painting: Jan Van Eyck&rsquo;s Portrait of Giovanni Arnolfini and his Bride</em></p>
+Painting: Jan Van Eyck&rsquo;s Portrait of Giovanni Arnolfini and his Bride, Flemish, 1434</em></p>
 ]]></content>
   </entry>
   
@@ -93,24 +93,6 @@ Painting: Jan Van Eyck&rsquo;s Portrait of Giovanni Arnolfini and his Bride</em>
 <p>Steve Jobs’ Mac already bridged the user end of the divide between liberal arts and science. Flatiron School and programs like it (but not == to it) are bridging the divide on the designer end. What does this mean for the future of programming, which is the heart of the technology industry?</p>
 
 <p>A friend of mine who studied at Flatiron School in an earlier cohort put her experience in the following way. Her university degree allowed her to follow her interests in the humanities, but it didn’t provide her with hard skills to translate her passion into her career. This is where Flatiron came in. Flatiron School gives a new group of people, with knowledge and interests uncommon among today’s web and app developers, a way to make something of their own. If the Mac provided the platform for the intersection of liberal arts and technology, Flatiron School and programs like it are graduating the people who will build upon that platform.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Second Octopress Post]]></title>
-    <link href="http://dperel.github.io/blog/2015/06/07/second-octopress-post/"/>
-    <updated>2015-06-07T20:28:13-04:00</updated>
-    <id>http://dperel.github.io/blog/2015/06/07/second-octopress-post</id>
-    <content type="html"><![CDATA[<p>The man who created the Twitter bird and Github Octocat designs <a href = "http://pando.com/2013/07/08/original-github-octocat-designer-simon-oxley-on-his-famous-creation-i-dont-remember-drawing-it/"> doesn&rsquo;t remember designing either of them very well </a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My First Post on Octopress]]></title>
-    <link href="http://dperel.github.io/blog/2015/06/01/my-first-post-on-octopress/"/>
-    <updated>2015-06-01T18:02:47-04:00</updated>
-    <id>http://dperel.github.io/blog/2015/06/01/my-first-post-on-octopress</id>
-    <content type="html"><![CDATA[<p>&ldquo;Hello, World&rdquo;</p>
 ]]></content>
   </entry>
   
