@@ -4,7 +4,7 @@
   <title><![CDATA[David Perel's Octopress Blog]]></title>
   <link href="http://dperel.github.io/atom.xml" rel="self"/>
   <link href="http://dperel.github.io/"/>
-  <updated>2015-06-25T00:12:15-04:00</updated>
+  <updated>2015-06-25T00:14:23-04:00</updated>
   <id>http://dperel.github.io/</id>
   <author>
     <name><![CDATA[David Perel]]></name>
@@ -76,11 +76,13 @@ For example, in an expression of the form. Example: For every x, if x is a dog, 
 
 <p>Those first and last lines answer our question: <strong>Binding is a class that produces instances, and it belongs to Kernel. </strong> Kernel! The all important nugget at the center of our Ruby popcorn. Binding even has several public instance methods that allow you to examine what it contains. Binding.local_variables and Binding.local_variable_defined? are useful.</p>
 
+<h3> To sum it up:</h3>
+
+
 <p>Binding&rsquo;s relation to Kernel explains its ability to pack variables, methods, the value of self, and possibly an iterator block into a single word. Binding gives the Pry gem its power, and it enables ERB templates to make the most of your Ruby code when generating code in other langauages. <strong>Binding is an open lens into a universe of code. Binding is the world seen through a water droplet. Binding is encapsulation. <strong></p>
 
-<p><img class="center" src="http://www.oneonta.edu/faculty/farberas/arth/Images/ARTH_214images/van_eyck/arnolfini/center.jpg"></p>
-
-<p><strong> Do you see the binding now? </strong></p>
+<p><strong> Do you see the binding now? </strong>
+<img class="center" src="http://www.oneonta.edu/faculty/farberas/arth/Images/ARTH_214images/van_eyck/arnolfini/center.jpg"></p>
 
 <p><em>
 Painting: Jan Van Eyck&rsquo;s Portrait of Giovanni Arnolfini and his Bride, Flemish, 1434</em></p>
