@@ -9,7 +9,7 @@
   <meta name="author" content="David Perel">
 
   
-  <meta name="description" content="　 David Perel's Octopress Blog Bindings in Ruby Do you see the binding? In ERB, Ruby programmers become aware of the importance of binding. In order &hellip;">
+  <meta name="description" content="　 David Perel's Octopress Blog Bindings in Ruby Do you see the binding? What is a binding? When using Embedded Ruby, Ruby programmers become aware &hellip;">
   
 
   <meta name="HandheldFriendly" content="True">
@@ -106,7 +106,10 @@
 
 <p><strong>Do you see the binding? </strong></p>
 
-<p>In ERB, Ruby programmers become aware of the importance of binding. In order to use this powerful templating tool to generate HTML (or other language) documents using Ruby, a binding is required to take a snapshot of the current code and pass it to be executed. Let&rsquo;s use this code snippet where we assume there is a Movie class with an array of information-laden movie objects made accessible by calling Movie.all:</p>
+<h3> What is a binding? </h3>
+
+
+<p>When using Embedded Ruby, Ruby programmers become aware of the importance of binding. In order to use ERB&rsquo;s templating tool to generate HTML (or other language) documents using Ruby, a binding is required to take a snapshot of the current code and pass it to be executed. Let&rsquo;s use this code snippet where we assume there is a Movie class with an array of information-laden movie objects made accessible by calling Movie.all:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -140,6 +143,9 @@
 
 
 <p>Notice where binding came in there? It was in the loop, taking a snapshot of the code as it stood and passing it to the ERB execution method, template#result(). We&rsquo;ve seen some of what it can do. But why do we have to use this, and where does it get its power from?</p>
+
+<h3> Where does binding come from? </h3>
+
 
 <p>To start our inquiry into its roots, here are some short definitions of binding:</p>
 
