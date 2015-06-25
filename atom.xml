@@ -4,7 +4,7 @@
   <title><![CDATA[David Perel's Octopress Blog]]></title>
   <link href="http://dperel.github.io/atom.xml" rel="self"/>
   <link href="http://dperel.github.io/"/>
-  <updated>2015-06-11T01:02:40-04:00</updated>
+  <updated>2015-06-24T23:23:55-04:00</updated>
   <id>http://dperel.github.io/</id>
   <author>
     <name><![CDATA[David Perel]]></name>
@@ -12,6 +12,63 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Bindings in Ruby]]></title>
+    <link href="http://dperel.github.io/blog/2015/06/24/bindings-in-ruby/"/>
+    <updated>2015-06-24T22:13:35-04:00</updated>
+    <id>http://dperel.github.io/blog/2015/06/24/bindings-in-ruby</id>
+    <content type="html"><![CDATA[<p>Bindings in Embedded Ruby</p>
+
+<p><img class="center" src="http://www.artinthepicture.com/artists/Jan_van_Eyck/arnolfini.jpeg"></p>
+
+<p>Do you see the binding?</p>
+
+<p>In ERB, Ruby programmers become aware of the importance of binding. In order to use this powerful templating tool to generate HTML (or other language) documents using Ruby, a binding is required to pass a snapshot of the current code and pass it to be executed. Let&rsquo;s use this code snippet where we assume there is a Movie class with an array of information-laden movie objects made accessible by calling Movie.all:</p>
+
+<p>def generate_movie_webpages
++    html = File.read(&ldquo;lib/templates/movie.html.erb&rdquo;)
++    template = ERB.new(html)</p>
+
+<h1>From our movie.html.erb file we generate a new ERB template</h1>
+
+<ul>
+<li> @movies = Movie.all</li>
+<li> @movies.each do |movie|</li>
+<li>   @movie = movie</li>
+<li>   result = template.result(binding)</li>
+<li>   File.write(&ldquo;_site/movies/#{movie.name}&rdquo;, result)
+
+<h1>For each movie object in our list, we generate a page based on the template and store it at a unique address.</h1></li>
+<li> end</li>
+<li>end</li>
+</ul>
+
+
+<p>Notice where binding came in there? It was in the loop, taking a snapshot of the code as it stood and passing it to the ERB execution method, template#result(). We&rsquo;ve seen some of what it can do. Now, what exactly does binding contain, and where does it come from?</p>
+
+<p>To start our inquiry into its roots, here are some short definitions of binding:</p>
+
+<p>&ldquo;It squishes the universe into one singular object that I can then pass around.&rdquo; - Avi Flombaum, Rubyista Extraordinaire</p>
+
+<p>&ldquo;Logic of a quantifier to be applied to a given variable so that the variable falls within its scope.
+For example, in an expression of the form. Example: For every x, if x is a dog, x is an animal,’ the universal quantifier is binding the variable x.&rdquo; - Oxford English Dictionary</p>
+
+<p>This is a good start. It seems that binding grabs the universe of code as it is at that line of processing, packs it in a pill, and allows your template to ingest it for execution. But where exactly does binding come from? What kind of method or object is it? To help us out, I&rsquo;ve looked in the Ruby Documentation.</p>
+
+<p>&ldquo;Objects of class Binding encapsulate the execution context at some particular place in the code and retain this context for future use. The variables, methods, value of self, and possibly an iterator block that can be accessed in this context are all retained. Binding objects can be created using Kernel#binding.&rdquo; - Ruby-doc.org</p>
+
+<p>Those first and last lines answer our question: Bindings are instances of a class and they belong to Kernel. Kernel! The all important nugget at the center of our Ruby popcorn. Binding even has several public instance methods that allow you to examine what it contains. Binding.local_variables and Binding.local_variable_defined? are useful.</p>
+
+<p>Binding&rsquo;s relation to Kernel explains its ability to pack variables, methods, the value of self, and possibly an iterator block into a single word. Binding gives the Pry gem its power, and it enables ERB templates to make the most of your Ruby code when generating code in other langauages. Binding is a 360-degree snapshot. Binding is the world seen through a water droplet. Binding is encapsulation.</p>
+
+<p><img class="center" src="http://www.oneonta.edu/faculty/farberas/arth/Images/ARTH_214images/van_eyck/arnolfini/center.jpg"></p>
+
+<p>Do you see the binding now?</p>
+
+<p>Painting: Jan Van Eyck&rsquo;s Giovanni Arnolfini and his Bride'</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Code Bootcamps and the Changing Face of Tech]]></title>
@@ -22,7 +79,7 @@
 
 <p>16,000 code school graduates are expected to enter the workforce this year, which is a 138% increase from last year. At this rate, code school graduates from diverse backgrounds will cause a transformation of the tech industry. Here’s how.</p>
 
-<p>Technology is only as good as what it can do, and the people who make it decide what it can do. At Flatiron School, the student body is evenly split between women and men. Most of us studied liberal arts, and many of us have worked as teachers, as designers, and as consultants. We can tell that we are a different breed from the current generation of programmers because we constantly find errors in sentence clarity and spelling in programming resources on the internet. To many of us, it is apparent that most programmers out there don’t have a background that lets them communicate their craft easily to non-programmers. By learning to code, we’re chinking away at a long-standing wall between science and humanities.</p>
+<p>Technology is only as good as what it can do, and the people who make it decide what it can do. At Flatiron School, the student body is evenly split between women and men. Most of us studied liberal arts, and many of us have worked as teachers, as designers, and as consultants. We can tell that we are a different breed from the current generation of programmers because we constantly find errors in sentence clarity and spelling in programming resources on the internet. We find gaps in those websites' instructions that obscure the point of certain exercises. To many of us, it is apparent that most programmers out there don’t have a background that lets them communicate their craft easily to non-programmers. By learning to code and pushing through those difficulties, we’re chinking away at a long-standing wall between science and humanities.</p>
 
 <p>Steve Jobs’ Mac already bridged the user end of the divide between liberal arts and science. Flatiron School and programs like it (but not == to it) are bridging the divide on the designer end. What does this mean for the future of programming, which is the heart of the technology industry?</p>
 
