@@ -4,7 +4,7 @@
   <title><![CDATA[David Perel's Octopress Blog]]></title>
   <link href="http://dperel.github.io/atom.xml" rel="self"/>
   <link href="http://dperel.github.io/"/>
-  <updated>2015-06-24T23:43:55-04:00</updated>
+  <updated>2015-06-24T23:45:35-04:00</updated>
   <id>http://dperel.github.io/</id>
   <author>
     <name><![CDATA[David Perel]]></name>
@@ -74,7 +74,8 @@ For example, in an expression of the form. Example: For every x, if x is a dog, 
 
 <p><strong> Do you see the binding now? </strong></p>
 
-<p>Painting: Jan Van Eyck&rsquo;s Giovanni Arnolfini and his Bride'</p>
+<p><em>
+Painting: Jan Van Eyck&rsquo;s Portrait of Giovanni Arnolfini and his Bride</em></p>
 ]]></content>
   </entry>
   
