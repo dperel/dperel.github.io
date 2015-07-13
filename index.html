@@ -9,7 +9,7 @@
   <meta name="author" content="David Perel">
 
   
-  <meta name="description" content="　 David Perel's Octopress Blog Bindings in Ruby Do you see the binding? What is a binding? When using Embedded Ruby, Ruby programmers become aware &hellip;">
+  <meta name="description" content="　 David Perel's Octopress Blog Halfway Last week at Flatiron School we finally got to the big kahuna of our syllabus, Rails. And finally, I &hellip;">
   
 
   <meta name="HandheldFriendly" content="True">
@@ -66,6 +66,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/07/13/halfway/">Halfway</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/06/24/bindings-in-ruby/">Bindings in Ruby</a>
       </li>
     
@@ -100,82 +104,45 @@
     
   
   <li class="entry first-entry">
-    <h2 class="entry-title"><a href="/blog/2015/06/24/bindings-in-ruby/">Bindings in Ruby</a></h2>
+    <h2 class="entry-title"><a href="/blog/2015/07/13/halfway/">Halfway</a></h2>
     
-      <div class="entry-content"><p><strong>Do you see the binding? </strong></p>
+      <div class="entry-content"><p>Last week at Flatiron School we finally got to the big kahuna of our syllabus, Rails. And finally, I understand why it is awesome. Rails can generate a full MVC-based web app from the command line with the command rails generate scaffold SITENAME. Need a new model? Type rails g model MODELNAME. Need a few routes? Migrations? There’s no need to manually create the core files of a web app because they can all be done from the command line. It feels like I’ve entered some club of those who know.</p>
 
-<p><img class="center" src="http://www.artinthepicture.com/artists/Jan_van_Eyck/arnolfini.jpeg"></p>
+<p>Yes, Rails is awesome. Personally, I can’t wait to put it to use in our final projects, which start in T minus 3 weeks. So until that exciting time, here’s something else entirely about the neighborhood around Flatiron School.
+<img class="left" src="/code/octopress/source/images/cabinclass.jpg" width="350" height="350" title="image" alt="images"></p>
 
-<h3> What is a binding? </h3>
+<p>Flatiron School’s campus is nestled between two buildings that used to house prominent cruise ship lines, the Panama-Pacific Line and the Cunard Line. These buildings, like many of the other older structures in the Wall Street area, are decorated with marine motifs, such as shells, seahorses, and tridents.</p>
 
+<p><img class="left" src="/code/octopress/source/images/lantern.jpg" width="350" height="350" title="image" alt="images"></p>
 
-<p>When using Embedded Ruby, Ruby programmers become aware of the importance of binding. In order to use ERB&rsquo;s templating tool to generate HTML (or other language) documents using Ruby, a binding is required to take a snapshot of the current code and pass it to be executed. Let&rsquo;s use this code snippet where we assume there is a Movie class with an array of information-laden movie objects made accessible by calling Movie.all:</p>
+<p>As ships ceded their place to airplanes as a primary mode of transport, the cruise lines sank, and law firms and finance companies moved into these hulking buildings.</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="k">def</span> <span class="nf">generate_movie_webpages</span>
-</span><span class='line'>  <span class="n">html</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;lib/templates/movie.html.erb&quot;</span><span class="p">)</span>
-</span><span class='line'>   <span class="n">template</span> <span class="o">=</span> <span class="no">ERB</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-</span><span class='line'><span class="c1">#From our movie.html.erb file we generate a new ERB template </span>
-</span><span class='line'>
-</span><span class='line'>    <span class="vi">@movies</span> <span class="o">=</span> <span class="no">Movie</span><span class="o">.</span><span class="n">all</span>
-</span><span class='line'>    <span class="vi">@movies</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">movie</span><span class="o">|</span>
-</span><span class='line'>      <span class="vi">@movie</span> <span class="o">=</span> <span class="n">movie</span>
-</span><span class='line'>      <span class="n">result</span> <span class="o">=</span> <span class="n">template</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="nb">binding</span><span class="p">)</span>
-</span><span class='line'>      <span class="no">File</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;_site/movies/</span><span class="si">#{</span><span class="n">movie</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
-</span><span class='line'><span class="c1">#For each movie object in our list, we generate a page based</span>
-</span><span class='line'><span class="c1">#on the template and store it at a unique address.</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+<p><img class="left" src="/code/octopress/source/images/cunardline.jpg" width="350" height="350" title="image" alt="images"></p>
 
+<p>Above, the Cunard Line building, and below, remnants of the Pan Pacific building&rsquo;s signange.</p>
 
-<p>Notice where binding came in there? It was in the loop, taking a snapshot of the code as it stood and passing it to the ERB execution method, template#result(). We&rsquo;ve seen some of what it can do. But why do we have to use this, and where does it get its power from?</p>
+<p><img class="left" src="/code/octopress/source/images/panpacific.jpg" width="350" height="350" title="image" alt="images"></p>
 
-<h3> Where does binding come from? </h3>
+<p>And now Flatiron School lives in the neighborhood, bringing in a new cycle of economic change to New York City.</p>
 
+<p><img class="left" src="/code/octopress/source/images/sailboat.jpg" width="350" height="350" title="image" alt="images"></p>
 
-<p>To start our inquiry into its roots, here are some short definitions of binding:</p>
-
-<p><em>&ldquo;It squishes the universe into one singular object that I can then pass around.&rdquo;</em> - Avi Flombaum, Rubyista Extraordinaire</p>
-
-<p><em>&ldquo;Logic of a quantifier to be applied to a given variable so that the variable falls within its scope.
-For example, in an expression of the form: For every x, if x is a dog, x is an animal, the universal quantifier is binding the variable x.&rdquo; </em> - Oxford English Dictionary</p>
-
-<p>This is a good start. It seems that binding grabs the universe of code as it is at that line of processing, packs it in a pill, and allows your template to ingest it for execution. <strong>But where exactly does binding come from? What kind of method or object is it? </strong>To help us out, I&rsquo;ve reached into the Ruby Documentation.</p>
-
-<p>&ldquo;Objects of class Binding encapsulate the execution context at some particular place in the code and retain this context for future use. The variables, methods, value of self, and possibly an iterator block that can be accessed in this context are all retained. Binding objects can be created using Kernel#binding.&rdquo; - Ruby-doc.org</p>
-
-<p>Those first and last lines answer our question: <strong>Binding is a class that produces instances, and it belongs to Kernel. </strong> Kernel! The all important nugget at the center of our Ruby popcorn. Binding even has several public instance methods that allow you to examine what it contains. Binding.local_variables and Binding.local_variable_defined? are useful.</p>
-
-<h3> Bringing it all together:</h3>
-
-
-<p>Binding&rsquo;s relation to Kernel explains its ability to pack variables, methods, the value of self, and possibly an iterator block into a single word. Binding gives the Pry gem its power, and it enables ERB templates to make the most of your Ruby code when generating code in other langauages.</p>
-
-<p><strong>Binding is an open lens into a universe of code. Binding is the world seen through a water droplet. Binding is encapsulation. <strong></p>
-
-<p><strong> Do you see the binding now? </strong></p>
-
-<p><img class="center" src="http://www.oneonta.edu/faculty/farberas/arth/Images/ARTH_214images/van_eyck/arnolfini/center.jpg"></p>
-
-<p><em>
-Painting: Jan Van Eyck&rsquo;s Portrait of Giovanni Arnolfini and his Bride, Flemish, 1434</em></p>
+<p>(better photo of Cunard Line bldg)</p>
 </div>
       
       
+    
+  </li>
+  
+
+
+  
+    
+    
+    
+  
+  <li class="entry ">
+    <h2 class="entry-title"><a href="/blog/2015/06/24/bindings-in-ruby/">Bindings in Ruby</a></h2>
     
   </li>
   
